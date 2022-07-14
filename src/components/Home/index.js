@@ -1,4 +1,5 @@
 import LogoTitle from "../../assets/images/logo-s.png";
+import Logo from "./Logo";
 import AnimatedLetters from "../AnimatedLetters";
 import { Link } from 'react-router-dom';
 import './index.scss';
@@ -9,11 +10,11 @@ const Home = () => {
     const nameArray = ['A', 'n', 't', 'h', 'o', 'n', 'y']
     const jobArray = ['S', 'o', 'f', 't', 'w', 'a', 'r', 'e', ' ', 'E', 'n', 'g', 'i', 'n', 'e', 'e', 'r']
 
-    // useEffect(() => {
-    //     return setTimeout(() => {
-    //         setLetterClass('text-animate-hover')
-    //     }, 4000)
-    // }, [])
+    useEffect(() => {
+        setTimeout(() => {
+            setLetterClass('text-animate-hover')
+        }, 4000)
+    }, [])
 
     return (
         <div className="container home-page">
@@ -32,6 +33,7 @@ const Home = () => {
                 <h2>Python / AWS / Data Engineering</h2>
                 <Link to="/contacts" className="flat-button">Contact me</Link>
             </div>
+            <Logo />
         </div>
     )
 }
