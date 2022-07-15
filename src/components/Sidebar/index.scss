@@ -13,17 +13,17 @@ $default-color: grey;
 
     .logo {
         display: block;
-        padding: 2vh 0;
+        padding: 0;
 
         img {
             display: block;
-            margin: 2vh auto;
-            width: 30%;
+            margin: 0;
+            width: 100%;
             height: auto;
             min-height: 100%;
 
             &.sub-logo {
-                width: 50%;
+                width: 100%;
             }
         }
     }
@@ -114,11 +114,11 @@ $default-color: grey;
         li {
             a {
                 display: block;
-                font-size: 7vh;
+                font-size: 5vh;
                 padding: auto;
                 line-height: normal;
                 color: $default-color;
-                margin-top: 2vh;
+                margin-top: 1vh;
 
                 &:hover svg {
                     color: $green-color;
