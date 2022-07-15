@@ -1,5 +1,4 @@
 import LogoTitle from "../../assets/images/logo-s.png";
-import Logo from "./Logo";
 import AnimatedLetters from "../AnimatedLetters";
 import { Link } from 'react-router-dom';
 import './index.scss';
@@ -33,7 +32,6 @@ const Home = () => {
                 <h2>Python / AWS / Data Engineering</h2>
                 <Link to="/contacts" className="flat-button">Contact me</Link>
             </div>
-            <Logo />
         </div>
     )
 }
