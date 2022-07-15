@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 const Home = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
     const nameArray = ['A', 'n', 't', 'h', 'o', 'n', 'y']
-    const jobArray = ['S', 'o', 'f', 't', 'w', 'a', 'r', 'e', ' ', 'E', 'n', 'g', 'i', 'n', 'e', 'e', 'r']
+    const jobArray = ['S', 'o', 'f', 't', 'w', 'a', 'r', 'e', '-', 'E', 'n', 'g', 'i', 'n', 'e', 'e', 'r']
 
     useEffect(() => {
         setTimeout(() => {

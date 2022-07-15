@@ -1,40 +1,45 @@
+$text-color: white;
+$green-color: rgb(3, 140, 1);
+$background-color: rgb(18, 11, 43);
+
 .home-page {
 
     .text-zone {
         position: absolute;
-        left: 20%;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 40%;
+        left: 25vh;
+        top: 40vh;
+        width: 50vh;
         max-height: 90%;
+        transform: translateY(-50%);
     }
 
     h1 {
-        color: whitesmoke;
-        font-size: xx-large;
+        color: $text-color;
+        font-size: 5vh;
         margin: 0;
         font-family: 'Coolvetica';
         font-weight: 400;
 
+
         &::before {
             content: '<h1>';
             font-family: 'La Belle Aurore';
-            color: yellow;
-            font-size: medium;
+            color: $green-color;
+            font-size: 3vh;
             position: absolute;
-            margin-top: -10%;
-            left: 5%;
+            margin-top: 5%;
+            left: -10%;
             opacity: 0.6;
         }
 
         &::after {
             content: '</h1>';
             font-family: 'La Belle Aurore';
-            color: yellow;
-            font-size: medium;
+            color: $green-color;
+            font-size: 3vh;
             position: absolute;
-            margin-top: 10%;
-            margin-left: 5%;
+            margin-top: 5%;
+            margin-left: 0%;
             animation: fadeIn 1s 1.7s backwards;
             opacity: 0.6;
         }
@@ -49,33 +54,33 @@
         }
     }
 
-    .h2 {
-        color: blanchedalmond;
-        margin-top: 10%;
+    h2 {
+        color: $text-color;
+        margin-top: 5%;
         font-weight: 400;
-        font-size: large;
+        font-size: 2vh;
         font-family: sans-serif;
-        letter-spacing: 3px;
+        letter-spacing: 0.5vh;
         animation: fadeIn 1.8s backwards;
     }
 
     .flat-button {
-        color: yellow;
-        font-size: x-large;
+        color: $green-color;
+        font-size: 3vh;
         font-family: sans-serif;
         font-weight: 400;
-        letter-spacing: 4px;
+        letter-spacing: 0.5vh;
         text-decoration: none;
         padding: auto;
-        border: 1px solid yellow;
+        border: 0.5vh solid $green-color;
         margin-top: auto;
         float: left;
         animation: fadeIn 1s 1.8s backwards;
         white-space: nowrap;
 
         &:hover {
-            background: yellow;
-            color: black;
+            background: $green-color;
+            color: $background-color;
         }
 
     }
