@@ -45,6 +45,11 @@ const Sidebar = () => (
                     <FontAwesomeIcon icon={faInstagram} />
                 </a>
             </li>
+            {/* <li>
+                <a target='_blank' rel='noreferrer' href='FACEBOOK'>
+                    <FontAwesomeIcon icon={faInstagram} />
+                </a>
+            </li> */}
         </ul>
     </div>
 )

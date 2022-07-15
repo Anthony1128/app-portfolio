@@ -1,0 +1,91 @@
+.stage-cube-cont {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    padding-top: 25%;
+    margin-left: 0;
+    position: absolute;
+    left: 25%;
+    overflow: hidden;
+}
+
+.cubespinner {
+    animation-name: spincube;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+    transform-style: preserve-3d;
+    transform-origin: 10vh 10vh 0;
+    margin-left: calc(50% - 10vh);
+
+    div {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border: 2px solid rgb(0, 255, 153);
+        background: rgba(101, 251, 163, 0.4);
+        font-size: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 10px 0vh rgb(151, 255, 213);
+    }
+
+    .faceAws {
+        transform: translateZ(100px);
+        color: rgb(255, 136, 1);
+    }
+
+    .faceReact {
+        transform: rotateY(90deg) translateZ(100px);
+        color: cyan;
+    }
+
+    .faceGit {
+        transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+        color: rgb(255, 68, 0);
+    }
+
+    .faceLinux {
+        transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
+        color: black;
+    }
+
+    .facePython {
+        transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+        color: rgb(239, 255, 17);
+    }
+
+    .faceDocker {
+        transform: rotateX(-90deg) translateZ(100px);
+        color: rgb(62, 123, 255);
+    }
+
+    @keyframes spincube {
+
+        from,
+        to {
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        }
+
+        16% {
+            transform: rotateY(-90deg) rotateZ(90deg);
+        }
+
+        33% {
+            transform: rotateY(-90deg) rotateX(90deg);
+        }
+
+        50% {
+            transform: rotateY(-180deg) rotateZ(90deg);
+        }
+
+        66% {
+            transform: rotateY(-270deg) rotateX(90deg);
+        }
+
+        83% {
+            transform: rotateX(90deg);
+        }
+    }
+}
