@@ -4,7 +4,7 @@ $default-color: grey;
 
 .nav-bar {
     background: $nav-base-color;
-    width: 13%;
+    width: 10%;
     height: 100%;
     position: absolute;
     top: 0;
@@ -17,13 +17,14 @@ $default-color: grey;
 
         img {
             display: block;
-            margin: 1vh;
-            width: 90%;
+            margin-top: 10%;
+            margin-left: 10%;
+            width: 80%;
             height: auto;
-            min-height: 90%;
 
             &.sub-logo {
-                width: 90%;
+                width: 80%;
+                height: 30%;
             }
         }
     }
