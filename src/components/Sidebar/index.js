@@ -7,8 +7,7 @@ import { faEnvelope, faHome, faUser } from '@fortawesome/free-solid-svg-icons'
 import {
     faLinkedin,
     faGithub,
-    faYoutube,
-    faSkype,
+    faInstagram,
 } from '@fortawesome/free-brands-svg-icons'
 
 const Sidebar = () => (
@@ -31,15 +30,19 @@ const Sidebar = () => (
         <ul>
             <li>
                 <a target='_blank' rel='noreferrer' href='https://www.linkedin.com/in/4nthony1128/'>
-                    <FontAwesomeIcon icon={faLinkedin} color='blue' />
+                    <FontAwesomeIcon icon={faLinkedin} />
                 </a>
             </li>
             <li>
                 <a target='_blank' rel='noreferrer' href='https://github.com/Anthony1128'>
-                    <FontAwesomeIcon icon={faGithub} color='blue' />
+                    <FontAwesomeIcon icon={faGithub} />
                 </a>
             </li>
-            {/* todo add more extrenal contacts skype etc. */}
+            <li>
+                <a target='_blank' rel='noreferrer' href='https://www.instagram.com/4nthonygreen/'>
+                    <FontAwesomeIcon icon={faInstagram} />
+                </a>
+            </li>
         </ul>
     </div>
 )

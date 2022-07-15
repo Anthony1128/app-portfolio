@@ -1,4 +1,6 @@
 $nav-base-color: rgb(8, 2, 30);
+$green-color: rgb(3, 140, 1);
+$default-color: grey;
 
 .nav-bar {
     background: $nav-base-color;
@@ -38,7 +40,7 @@ $nav-base-color: rgb(8, 2, 30);
         a {
             display: block;
             font-size: 5vh;
-            color: grey;
+            color: $default-color;
             line-height: normal;
             height: auto;
             position: relative;
@@ -50,7 +52,7 @@ $nav-base-color: rgb(8, 2, 30);
             }
 
             &:hover {
-                color: rgb(3, 140, 1);
+                color: $green-color;
 
                 svg {
                     opacity: 0;
@@ -63,7 +65,7 @@ $nav-base-color: rgb(8, 2, 30);
 
             &:after {
                 content: '';
-                font-size: medium;
+                font-size: 3vh;
                 letter-spacing: normal;
                 position: absolute;
                 bottom: 0;
@@ -95,30 +97,31 @@ $nav-base-color: rgb(8, 2, 30);
 
         a.active {
             svg {
-                color: rgb(3, 140, 1);
+                color: $green-color;
             }
         }
     }
 
     ul {
-        position: absolute;
-        bottom: 10%;
+        position: relative;
+        top: 45vh;
         width: 100%;
         display: block;
         padding: 0;
         list-style: none;
         text-align: center;
-        margin: 0;
 
         li {
             a {
                 display: block;
-                font-size: xx-large;
+                font-size: 7vh;
                 padding: auto;
-                line-height: 50%;
+                line-height: normal;
+                color: $default-color;
+                margin-top: 2vh;
 
                 &:hover svg {
-                    color: rgb(3, 140, 1);
+                    color: $green-color;
                 }
             }
         }
