@@ -17,13 +17,13 @@ $default-color: grey;
 
         img {
             display: block;
-            margin: 0;
-            width: 100%;
+            margin: 1vh;
+            width: 90%;
             height: auto;
-            min-height: 100%;
+            min-height: 90%;
 
             &.sub-logo {
-                width: 100%;
+                width: 90%;
             }
         }
     }
