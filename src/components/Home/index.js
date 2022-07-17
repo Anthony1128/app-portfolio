@@ -32,7 +32,7 @@ const Home = () => {
                         <AnimatedLetters letterClass={letterClass} strArray={jobArray} idx={21} />
                     </h1>
                     <h2>Python / AWS / Data Engineering</h2>
-                    <Link to="/contacts" className="flat-button">Contact me</Link>
+                    <Link to="/contact" className="flat-button">Contact me</Link>
                 </div>
             </div>
             <Loader type="pacman" />
