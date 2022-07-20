@@ -27,7 +27,7 @@ const Contact = () => {
                     <h1>
                         <AnimatedLetters letterClass={letterClass} strArray={contact_txt} idx={15} />
                     </h1>
-                    <p>TODO: add text here</p>
+                    <p>I am open for new opportunities</p>
                     <div className='contact-form'>
                         <form onSubmit={sendEmail}>
                             <ul>

@@ -1,21 +1,18 @@
 import { Outlet } from 'react-router-dom'
 import Sidebar from '../Sidebar'
 import './index.scss'
+import Hexes from "../../assets/images/hexes.png";
 
 const Layout = () => {
     return (
         <div className='App'>
             <Sidebar />
             <div className='Page'>
-                <span className='tags top-tags'>&lt;body&gt;</span>
+                <img className='tags top-tag' src={Hexes} />
 
                 <Outlet />
 
-                <span className='tags bottom-tags'>
-                    &lt;body&gt;
-                    <br />
-                    <span className='bottom-tag-html'>&lt;html&gt;</span>
-                </span>
+                <img className='tags bottom-tag' src={Hexes} />
             </div>
         </div>
     )

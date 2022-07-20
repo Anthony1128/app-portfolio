@@ -4,7 +4,8 @@ $default-color: grey;
 
 .nav-bar {
     background: $nav-base-color;
-    width: 10%;
+    min-width: 15vh;
+    max-width: 15vh;
     height: 100%;
     position: absolute;
     top: 0;

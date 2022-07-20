@@ -6,7 +6,7 @@ import { faAws, faDocker, faGitAlt, faLinux, faPython, faReact } from '@fortawes
 import Loader from 'react-loaders'
 
 const About = () => {
-    const about_txt = ["A", "b", "o", "u", "t", " ", "m", "e", ":"]
+    const about_txt = ["A", "b", "o", "u", "t", " ", "m", "e"]
     const [letterClass, setLetterClass] = useState('text-animate')
 
     useEffect(() => {
@@ -22,9 +22,11 @@ const About = () => {
                     <h1>
                         <AnimatedLetters letterClass={letterClass} strArray={about_txt} idx={15} />
                     </h1>
-                    <p>TODO:</p>
-                    <p>paste some text</p>
-                    <p>here</p>
+                    <p>Software engineer with focus on data processing and public clouds</p>
+                    <p>- Work with Cloud Solutions (AWS), ETL processes</p>
+                    <p>- Primary programming language is Python</p>
+                    <p>- Hands-on experience in DevOps practices (Terraform, Docker, Jenkins)</p>
+                    <p>- Passed a powerful training unit in Data Engineering</p>
                 </div>
                 <div className='stage-cube-cont'>
                     <div className='cubespinner'>

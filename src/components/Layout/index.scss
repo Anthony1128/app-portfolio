@@ -6,23 +6,21 @@ $green-color: rgb(3, 140, 1);
     position: absolute;
 }
 
-.top-tags {
-    bottom: auto;
-    top: 2vh;
+.top-tag {
+    top: 1%;
+    left: 50%;
 }
 
 .tags {
-    color: $green-color;
     opacity: 0.6;
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    font-size: xx-large;
-    font-family: 'La Belle Aurore';
+    width: 20vh;
+    height: auto;
 }
 
-.bottom-tag-html {
-    margin-left: -20%;
+.bottom-tag {
+    bottom: 1%;
+    left: 50%;
 }
 
 .container {
@@ -44,13 +42,13 @@ $green-color: rgb(3, 140, 1);
 .about-page {
     .text-zone {
         position: absolute;
-        left: 20%;
-        top: 50%;
-        transform: translateY(-50%);
+        left: 25vh;
+        top: 45vh;
         width: 35%;
+        max-height: 90%;
         vertical-align: middle;
         display: table-cell;
-        max-height: 90%;
+        transform: translateY(-50%);
     }
 
     h1 {
@@ -65,30 +63,32 @@ $green-color: rgb(3, 140, 1);
     }
 
     &::before {
-        content: '<h1>';
-        font-family: 'La Belle Aurore';
+        content: '\2620';
         color: $green-color;
-        font-size: 3vh;
+        font-size: 5vh;
         position: absolute;
-        margin-top: 27%;
-        left: 15%;
+        top: 10vh;
+        left: 20vh;
         opacity: 0.6;
     }
 
     &::after {
-        content: '</h1>';
-        font-family: 'La Belle Aurore';
+        content: '\2620';
         color: $green-color;
-        font-size: 3vh;
+        font-size: 5vh;
         position: absolute;
-        margin-top: 27%;
-        margin-left: 30%;
+        top: 80%;
+        left: 20vh;
         animation: fadeIn 1s 1.7s backwards;
         opacity: 0.6;
     }
 
+    span {
+        white-space: pre;
+    }
+
     p {
-        font-size: 5vh;
+        font-size: 3vh;
         color: white;
         font-family: sans-serif;
         font-weight: 300;
