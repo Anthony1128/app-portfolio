@@ -82,4 +82,21 @@ $background-color: rgb(18, 11, 43);
         }
 
     }
+
+    .grid-container {
+        margin-left: 75vh;
+        margin-top: 3vh;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 2vh;
+
+        .grid-item {
+            border: 0.5vh solid $green-color;
+            text-align: center;
+
+            img {
+                width: 25vh;
+            }
+        }
+    }
 }

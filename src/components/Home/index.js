@@ -34,6 +34,17 @@ const Home = () => {
                     <h2>Python / AWS / Data Engineering</h2>
                     <Link to="/contact" className="flat-button">Contact me</Link>
                 </div>
+                <div className="grid-container">
+                    <div className="grid-item"><img src={LogoTitle} alt="pyramid" /></div>
+                    <div className="grid-item"><img src={LogoTitle} alt="pyramid" /></div>
+                    <div className="grid-item"><img src={LogoTitle} alt="pyramid" /></div>
+                    <div className="grid-item"><img src={LogoTitle} alt="pyramid" /></div>
+                    <div className="grid-item"><img src={LogoTitle} alt="pyramid" /></div>
+                    <div className="grid-item"><img src={LogoTitle} alt="pyramid" /></div>
+                    <div className="grid-item"><img src={LogoTitle} alt="pyramid" /></div>
+                    <div className="grid-item"><img src={LogoTitle} alt="pyramid" /></div>
+                    <div className="grid-item"><img src={LogoTitle} alt="pyramid" /></div>
+                </div>
             </div>
             <Loader type="pacman" />
         </>
