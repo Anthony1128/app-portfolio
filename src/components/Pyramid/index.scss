@@ -46,19 +46,35 @@ $text-color: white;
 }
 
 .pyramid-zone {
-    margin-left: 30%;
+    margin-left: 15vh;
     margin-right: auto;
-    margin-top: 2vh;
-    background: rgba(101, 251, 163, 0.4);
-    width: 51%;
+    margin-top: 3vh;
     text-align: center;
-    border: 0.5vh solid rgb(0, 255, 153);
-    box-shadow: 0 0 1vh 0vh rgb(151, 255, 213);
-    padding: 0 0;
+    table-layout: fixed;
+    width: 100%;
 
     #pyramid {
+        width: 100%;
+        background: rgba(101, 251, 163, 0.4);
+        border: 0.5vh solid rgb(0, 255, 153);
+        box-shadow: 0 0 1vh 0vh rgb(151, 255, 213);
+        padding: 1vh 0;
+
         text-align: center;
-        color: $green-color;
+        color: $text-color;
         font-size: 3vh;
+        line-height: 3vh;
+        letter-spacing: 1vh;
+
+        .text-animate-hover {
+            min-width: auto;
+            display: inline-block;
+            animation-fill-mode: both;
+
+            &:hover {
+                animation: rubberBand 1s;
+                color: $green-color;
+            }
+        }
     }
 }

@@ -28,13 +28,12 @@ const Pyramid = () => {
             height_display.textContent = height_item;
         });
 
-
         pyramid.innerHTML = printPyramid(brick_item, height_item);
         function printPyramid(item, height) {
             var res = "";
 
             for (var i = 2; i <= height + 1; i++) {
-                res += " ".repeat(height + 1 - i) + item.repeat(i) + "<br>";
+                res += `<span class=text-animate-hover>${item}</span>`.repeat(i) + "<br>";
             };
 
             return res;
@@ -76,7 +75,7 @@ const Pyramid = () => {
                             <td>
                                 <form action="#">
                                     <label htmlFor="hight">How High ?</label>
-                                    <input type="range" id="hight" name="hight_range" min="2" max="15" defaultValue="25" step="1" />
+                                    <input type="range" id="hight" name="hight_range" min="2" max="20" defaultValue="10" step="1" />
                                     <label id="height_display"></label>
                                 </form>
                             </td>
@@ -86,9 +85,11 @@ const Pyramid = () => {
                 <table className='pyramid-zone'>
                     <tbody>
                         <tr>
+                            <td width="12%"></td>
                             <td>
                                 <div id="pyramid"></div>
                             </td>
+                            <td width="20%"></td>
                         </tr>
                     </tbody>
                 </table>
