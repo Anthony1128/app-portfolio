@@ -1,0 +1,64 @@
+$green-color: rgb(3, 140, 1);
+$text-color: white;
+
+.header {
+    margin-left: 15vh;
+    margin-right: auto;
+    margin-top: 2vh;
+    background: rgba(101, 251, 163, 0.4);
+    width: 92%;
+    text-align: center;
+    border: 0.5vh solid rgb(0, 255, 153);
+    box-shadow: 0 0 1vh 0vh rgb(151, 255, 213);
+    padding: 0 0;
+
+    p {
+        font-family: 'Coolvetica';
+        font-size: 5vh;
+        color: $text-color;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.parameters {
+    margin-left: 15vh;
+    margin-right: auto;
+    margin-top: 2vh;
+    table-layout: fixed;
+    width: 92%;
+
+    td {
+        background: rgba(101, 251, 163, 0.4);
+        text-align: center;
+        border: 0.5vh solid rgb(0, 255, 153);
+        box-shadow: 0 0 1vh 0vh rgb(151, 255, 213);
+        padding: 0 0vh;
+        font-size: 3vh;
+        color: $text-color;
+
+        #brick,
+        #hight {
+            margin-left: 1vh;
+            size: 3vh;
+        }
+    }
+}
+
+.pyramid-zone {
+    margin-left: 30%;
+    margin-right: auto;
+    margin-top: 2vh;
+    background: rgba(101, 251, 163, 0.4);
+    width: 51%;
+    text-align: center;
+    border: 0.5vh solid rgb(0, 255, 153);
+    box-shadow: 0 0 1vh 0vh rgb(151, 255, 213);
+    padding: 0 0;
+
+    #pyramid {
+        text-align: center;
+        color: $green-color;
+        font-size: 3vh;
+    }
+}
