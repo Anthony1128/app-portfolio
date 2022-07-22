@@ -27,6 +27,7 @@ $text-color: white;
     margin-top: 2vh;
     table-layout: fixed;
     width: 92%;
+    font-family: sans-serif;
 
     td {
         background: rgba(101, 251, 163, 0.4);
@@ -65,6 +66,7 @@ $text-color: white;
         font-size: 3vh;
         line-height: 3vh;
         letter-spacing: 1vh;
+        font-family: sans-serif;
 
         .text-animate-hover {
             min-width: auto;
