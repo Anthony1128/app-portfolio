@@ -1,5 +1,6 @@
 import LogoTitle from "../../assets/images/A.png";
 import PyramidScrn from "../../assets/images/pyramid-prtscn.png";
+import PixelDrawScrn from "../../assets/images/pixeldraw-prtscn.png";
 // import PyramidScrn from "../../assets/images/pyramid-simple.png";
 import AnimatedLetters from "../AnimatedLetters";
 import { Link } from 'react-router-dom';
@@ -40,7 +41,9 @@ const Home = () => {
                     <div className="grid-item">
                         <Link to="/pyramid"><img src={PyramidScrn} alt="pyramid" /></Link>
                     </div>
-                    <div className="grid-item"></div>
+                    <div className="grid-item">
+                        <Link to="/pixeldraw"><img src={PixelDrawScrn} alt="pixeldraw" /></Link>
+                    </div>
                     <div className="grid-item"></div>
                     <div className="grid-item"></div>
                     <div className="grid-item"></div>
