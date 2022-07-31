@@ -41,7 +41,7 @@ $background-color: rgb(93, 64, 120);
         border: 0;
         background: $background-color;
         height: 5vh;
-        font-size: 3vh;
+        font-size: 1rem;
         color: $green-color;
         padding: 0 1vh;
         box-sizing: border-box;
@@ -63,7 +63,7 @@ $background-color: rgb(93, 64, 120);
         border: 0;
         background: $background-color;
         height: 20vh;
-        font-size: 3vh;
+        font-size: 1rem;
         color: $green-color;
         padding: 1vh;
         box-sizing: border-box;
@@ -72,7 +72,7 @@ $background-color: rgb(93, 64, 120);
 
     .flat-button {
         color: $green-color;
-        font-size: 3vh;
+        font-size: 2rem;
         letter-spacing: 1vh;
         text-decoration: none;
         padding: 1vh 1vh;
@@ -100,12 +100,12 @@ $background-color: rgb(93, 64, 120);
     top: 5vh;
     left: 70%;
     z-index: 999999;
-    width: 25vh;
+    width: 12vw;
     height: 8vh;
     color: $green-color;
     padding: 1vh;
     font-family: Helvetica;
-    font-size: 2vh;
+    font-size: 1rem;
     font-weight: 300;
     opacity: 0;
     animation: fadeIn 1s 1.5s forwards;
@@ -126,4 +126,25 @@ $background-color: rgb(93, 64, 120);
     position: relative;
     opacity: 0;
     animation: backInRight 1s 1.2s forwards;
+}
+
+@media (max-width: 700px) {
+    .info-map {
+        top: 55vh;
+        left: 50%;
+        width: 37vw;
+        height: 7vh;
+        font-size: 0.8rem;
+    }
+
+    .contact-form .flat-button {
+        font-size: 1rem;
+        letter-spacing: 1vh;
+    }
+
+    .map-wrap {
+        margin-top: 55vh;
+        margin-right: 4vw;
+        width: 70%;
+    }
 }

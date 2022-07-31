@@ -6,16 +6,17 @@ $background-color: rgb(18, 11, 43);
 
     .text-zone {
         position: absolute;
-        left: 25vh;
+        left: 12vw;
         top: 40vh;
-        width: 50vh;
+        width: 30vw;
+        min-width: 300px;
         max-height: 90%;
         transform: translateY(-50%);
     }
 
     h1 {
         color: $text-color;
-        font-size: 5vh;
+        font-size: 2rem;
         margin: 0;
         font-family: 'Coolvetica';
         font-weight: 400;
@@ -24,20 +25,20 @@ $background-color: rgb(18, 11, 43);
         &::before {
             content: '\2620';
             color: $green-color;
-            font-size: 5vh;
+            font-size: 2rem;
             position: absolute;
             top: 0;
-            left: -5vh;
+            left: -4vw;
             opacity: 0.6;
         }
 
         &::after {
             content: '\2620';
             color: $green-color;
-            font-size: 5vh;
+            font-size: 2rem;
             position: absolute;
             top: 80%;
-            left: -5vh;
+            left: -4vw;
             animation: fadeIn 1s 1.7s backwards;
             opacity: 0.6;
         }
@@ -56,21 +57,22 @@ $background-color: rgb(18, 11, 43);
         color: $text-color;
         margin-top: 5%;
         font-weight: 400;
-        font-size: 2vh;
+        font-size: 0.8rem;
         font-family: sans-serif;
-        letter-spacing: 0.5vh;
+        letter-spacing: 0.3vw;
         animation: fadeIn 1.8s backwards;
     }
 
     .flat-button {
         color: $green-color;
-        font-size: 3vh;
+        font-size: 1rem;
         font-family: sans-serif;
         font-weight: 400;
-        letter-spacing: 0.5vh;
+        letter-spacing: 0.3vw;
         text-decoration: none;
         padding: auto;
-        border: 0.5vh solid $green-color;
+        border: 0.2vh solid $green-color;
+        border-radius: 1vh;
         margin-top: auto;
         float: left;
         animation: fadeIn 1s 1.8s backwards;
@@ -84,7 +86,7 @@ $background-color: rgb(18, 11, 43);
     }
 
     .grid-container {
-        margin-left: 75vh;
+        margin-left: 40vw;
         margin-top: 3vh;
         display: grid;
         grid-template-columns: repeat(3, 37vh);
@@ -101,6 +103,33 @@ $background-color: rgb(18, 11, 43);
                 width: 100%;
                 height: 100%;
             }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .home-page {
+
+        .text-zone {
+            top: 10vh;
+            left: 35vw;
+
+            h1 {
+                font-size: 1.5rem;
+
+                &::before,
+                &::after {
+                    font-size: 2rem;
+                    left: -11vw;
+                }
+            }
+        }
+
+        .grid-container {
+            grid-template-columns: repeat(2, 17vh);
+            grid-template-rows: repeat(3, 9vh);
+            margin-left: 25vw;
+            margin-top: 25vh;
         }
     }
 }

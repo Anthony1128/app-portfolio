@@ -4,13 +4,13 @@ $default-color: grey;
 
 .nav-bar {
     background: $nav-base-color;
-    min-width: 15vh;
-    max-width: 15vh;
+    min-width: 80px;
+    width: 7vw;
+    max-width: 150px;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 3;
-    min-height: auto;
 
     .logo {
         display: block;
@@ -41,7 +41,7 @@ $default-color: grey;
 
         a {
             display: block;
-            font-size: 5vh;
+            font-size: 2rem;
             color: $default-color;
             line-height: normal;
             height: auto;
@@ -67,7 +67,7 @@ $default-color: grey;
 
             &:after {
                 content: '';
-                font-size: 3vh;
+                font-size: 1rem;
                 letter-spacing: normal;
                 position: absolute;
                 bottom: 0;
@@ -116,7 +116,7 @@ $default-color: grey;
         li {
             a {
                 display: block;
-                font-size: 5vh;
+                font-size: 2rem;
                 padding: auto;
                 line-height: normal;
                 color: $default-color;

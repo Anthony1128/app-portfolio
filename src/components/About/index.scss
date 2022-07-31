@@ -1,6 +1,6 @@
 .stage-cube-cont {
-    height: 200%;
-    width: 200%;
+    height: 100%;
+    width: 100%;
     top: 0;
     left: 0;
     position: absolute;
@@ -87,5 +87,12 @@
         83% {
             transform: rotateX(90deg);
         }
+    }
+}
+
+@media (max-width: 700px) {
+    .stage-cube-cont .cubespinner {
+        margin-left: calc(55% - 10vh);
+        margin-top: calc(130% - 10vh);
     }
 }
