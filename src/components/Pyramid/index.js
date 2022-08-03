@@ -12,17 +12,17 @@ const Pyramid = () => {
         var brick_obj = document.getElementById("brick");
         var brick_item = brick_obj.value;
 
-        brick_obj.addEventListener("click", function () {
-            brick_item = brick_obj.value;
-            pyramid.innerHTML = printPyramid(brick_item, height_item);
-        });
-
         var height_obj = document.getElementById("hight");
         var height_item = Number(height_obj.value);
         var height_display = document.getElementById("height_display");
         height_display.textContent = height_item;
 
-        height_obj.addEventListener("click", function () {
+        brick_obj.addEventListener("change", function () {
+            brick_item = brick_obj.value;
+            pyramid.innerHTML = printPyramid(brick_item, height_item);
+        });
+
+        height_obj.addEventListener("change", function () {
             height_item = Number(height_obj.value);
             pyramid.innerHTML = printPyramid(brick_item, height_item);
             height_display.textContent = height_item;
@@ -85,11 +85,11 @@ const Pyramid = () => {
                 <table className='pyramid-zone'>
                     <tbody>
                         <tr>
-                            <td width="12%"></td>
+                            <td id="left_block" width="12%"></td>
                             <td>
                                 <div id="pyramid"></div>
                             </td>
-                            <td width="20%"></td>
+                            <td id="right_block" width="20%"></td>
                         </tr>
                     </tbody>
                 </table>

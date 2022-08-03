@@ -15,8 +15,8 @@
     animation-duration: 12s;
     transform-style: preserve-3d;
     transform-origin: 10vh 10vh 0;
-    margin-left: calc(35% - 10vh);
-    margin-top: calc(10% - 10vh);
+    margin-left: calc(65% - 10vh);
+    margin-top: calc(20% - 10vh);
 
     div {
         position: absolute;
@@ -94,5 +94,35 @@
     .stage-cube-cont .cubespinner {
         margin-left: calc(55% - 10vh);
         margin-top: calc(130% - 10vh);
+
+        div {
+            width: 100px;
+            height: 100px;
+            font-size: 50px;
+        }
+
+        .faceAws {
+            transform: translateZ(50px);
+        }
+
+        .faceReact {
+            transform: rotateY(90deg) translateZ(50px);
+        }
+
+        .faceGit {
+            transform: rotateY(90deg) rotateX(90deg) translateZ(50px);
+        }
+
+        .faceLinux {
+            transform: rotateY(180deg) rotateZ(90deg) translateZ(50px);
+        }
+
+        .facePython {
+            transform: rotateY(-90deg) rotateZ(90deg) translateZ(50px);
+        }
+
+        .faceDocker {
+            transform: rotateX(-90deg) translateZ(50px);
+        }
     }
 }

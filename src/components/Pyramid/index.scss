@@ -14,7 +14,8 @@ $text-color: white;
 
     p {
         font-family: 'Coolvetica';
-        font-size: 5vh;
+        font-size: 3rem;
+        letter-spacing: 1rem;
         color: $text-color;
         margin: 0;
         padding: 0;
@@ -77,6 +78,45 @@ $text-color: white;
                 animation: rubberBand 1s;
                 color: $green-color;
             }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .container .header {
+        width: 70%;
+
+        p {
+            font-size: 1rem;
+        }
+    }
+
+    .container .parameters {
+        width: 70%;
+
+        td {
+            font-size: 1rem;
+
+            input[type="range"] {
+                width: 100px;
+            }
+        }
+    }
+
+    .container .pyramid-zone {
+        margin-left: 22vw;
+
+        #left_block {
+            width: 0;
+        }
+
+        #pyramid {
+            font-size: 0.8rem;
+            letter-spacing: 0.2rem;
+        }
+
+        #right_block {
+            width: 15%;
         }
     }
 }
