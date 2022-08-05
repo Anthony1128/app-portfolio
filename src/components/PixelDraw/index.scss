@@ -29,7 +29,7 @@ $text-color: white;
     text-align: center;
 
     #main_canvas {
-        background: white;
+        // background: white;
         text-align: center;
         border: 0.5vh solid rgb(0, 255, 153);
         box-shadow: 0 0 1vh 0vh rgb(151, 255, 213);
@@ -58,5 +58,16 @@ $text-color: white;
             font-size: 90%;
             color: #000;
         }
+
+        #save {
+            font-size: 90%;
+            color: #000;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .pixel-canvas #main_canvas {
+        margin-left: 23vw;
     }
 }

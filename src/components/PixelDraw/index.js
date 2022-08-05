@@ -15,6 +15,8 @@ const PixelDraw = () => {
 
         var color_selector_obj = document.getElementById("color_selector");
         var reset_button_obj = document.getElementById("reset");
+        var save_button_obj = document.getElementById("save");
+        const savedImg = document.getElementById('savedImg');
 
         var window_width = window.innerWidth;
         var window_height = window.innerHeight;
@@ -31,6 +33,7 @@ const PixelDraw = () => {
             reset_canvas();
             canvas.addEventListener("click", change_color, false);
             reset_button_obj.addEventListener("click", reset_canvas, false);
+            save_button_obj.addEventListener("click", saveImg, false);
         }
 
         function Cell(row, column) {
@@ -69,6 +72,8 @@ const PixelDraw = () => {
 
         function reset_canvas() {
             canvas.width = canvas.width;
+            context.fillStyle = 'white';
+            context.fillRect(0, 0, canvas.width, canvas.height);
 
             for (var x = 0; x < canvas_width; x += canvas_step) {
                 context.moveTo(x, 0);
@@ -82,6 +87,18 @@ const PixelDraw = () => {
 
             context.strokeStyle = "Black";
             context.stroke();
+        };
+
+        function saveImg() {
+            console.log("hello")
+            const data = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+            const link = document.createElement("a");
+            link.href = data;
+            link.setAttribute("download", "masterpiece.png");
+            link.innerHTML = `<img src="${data}" alt="masterpiece" />`;
+            savedImg.insertBefore(link, savedImg.firstChild);
+            link.click();
+            savedImg.removeChild(link);
         };
     }, [])
 
@@ -120,11 +137,14 @@ const PixelDraw = () => {
                             </button>
                         </td>
                         <td>
-                            <label htmlFor="save">Save image</label>
+                            <button id="save">
+                                Save
+                            </button>
                         </td>
                     </tr>
                 </tbody>
             </table>
+            <div id="savedImg"></div>
         </div>
     </>
 }
