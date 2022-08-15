@@ -44,7 +44,9 @@ const Home = () => {
                     <div className="grid-item">
                         <Link to="/pixeldraw"><img src={PixelDrawScrn} alt="pixeldraw" /></Link>
                     </div>
-                    <div className="grid-item"></div>
+                    <div className="grid-item">
+                        <Link to="/cocktail"><img src={PixelDrawScrn} alt="cocktail" /></Link>
+                    </div>
                     <div className="grid-item"></div>
                     <div className="grid-item"></div>
                     <div className="grid-item"></div>

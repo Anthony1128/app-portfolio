@@ -1,0 +1,113 @@
+$green-color: rgb(3, 140, 1);
+$background-color: rgb(93, 64, 120);
+$text-color: white;
+
+
+#cocktail-header {
+    margin-left: 10vw;
+    margin-right: 1vw;
+    margin-top: 2vh;
+    background: rgba(101, 251, 163, 0.4);
+    text-align: center;
+    border: 0.5vh solid rgb(0, 255, 153);
+    box-shadow: 0 0 1vh 0vh rgb(151, 255, 213);
+    font-family: 'Coolvetica';
+    font-size: 2rem;
+    letter-spacing: 1rem;
+    color: $text-color;
+}
+
+.cocktail-form {
+    width: calc(50% - 10vw);
+    margin-top: 1vh;
+    margin-left: 10vw;
+    float: left;
+
+    ul {
+        padding: 0;
+        margin: 0;
+
+        li {
+            text-align: center;
+            padding: 0.5vh 0.5vh;
+            margin: 0;
+            list-style: none;
+            margin-bottom: 1vh;
+            opacity: 0;
+            overflow: hidden;
+            display: block;
+            clear: both;
+            position: relative;
+            animation: fadeInUp 2s 2s;
+            animation-fill-mode: forwards;
+        }
+    }
+
+    input[type='text'] {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0 1vh;
+        box-sizing: border-box;
+        background: rgba(101, 251, 163, 0.4);
+        text-align: center;
+        border: 0.5vh solid rgb(0, 255, 153);
+        box-shadow: 0 0 1vh 0vh rgb(151, 255, 213);
+        color: $text-color;
+    }
+
+    input[type='radio'] {
+        background-color: white;
+    }
+
+    label {
+        color: rgb(0, 255, 153);
+        font-size: 1rem;
+        padding-right: 2vw;
+    }
+
+    .flat-button {
+        color: $green-color;
+        font-size: 1rem;
+        letter-spacing: 0.5rem;
+        text-decoration: none;
+        border: 0.3vh solid $green-color;
+        border-radius: 3vh;
+        background: 0 0;
+        text-transform: uppercase;
+        text-align: center;
+
+        &:hover {
+            background: $green-color;
+            color: $background-color;
+        }
+    }
+
+    ::placeholder {
+        color: $text-color;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 3vh rgb(151, 255, 213) inset !important;
+    }
+
+    input:-webkit-autofill {
+        -webkit-text-fill-color: $green-color  !important;
+    }
+}
+
+.cocktail-data {
+    margin-left: calc(50% + 3vw);
+    margin-right: 1vw;
+    margin-top: 2vh;
+    background: rgba(101, 251, 163, 0.4);
+    text-align: center;
+    border: 0.5vh solid rgb(0, 255, 153);
+    box-shadow: 0 0 1vh 0vh rgb(151, 255, 213);
+    color: $text-color;
+    font-size: 1rem;
+    min-height: 300px;
+    padding: 2vh;
+}

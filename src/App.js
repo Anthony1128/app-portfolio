@@ -6,6 +6,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Pyramid from './components/Pyramid';
 import PixelDraw from './components/PixelDraw';
+import Cocktail from './components/Cocktail';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/pyramid" element={<Pyramid />} />
           <Route path="/pixeldraw" element={<PixelDraw />} />
+          <Route path="/cocktail" element={<Cocktail />} />
         </Route>
       </Routes>
     </>
