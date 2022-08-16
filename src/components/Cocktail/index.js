@@ -5,15 +5,23 @@ import Axios from 'axios'
 
 const BASE_URL = 'https://www.thecocktaildb.com/api/json/v1/1'
 
+const applyFilters = (data, filters) => {
+    data = data.filter((obj) => (obj['strAlcoholic'] == filters))
+    return data[0]
+}
+
 const CocktailInfo = ({ cocktailData }) => {
-    console.log(cocktailData)
     var ingredients = Object.entries(cocktailData).filter(
         (key, value) => (/strIngredient/.test(key))
     ).filter(([_, v]) => v != null).map(x => x[1]).join(', ')
+
     return (
         <div>
             <p>
-                {cocktailData.strDrink}
+                Name: {cocktailData.strDrink}
+            </p>
+            <p>
+                Alco: {cocktailData.strAlcoholic}
             </p>
             <p>
                 Ingredients: {ingredients}
@@ -37,14 +45,15 @@ const Cocktail = () => {
     const [cocktailData, setCocktailData] = useState('')
     const getCocktailData = (e) => {
         e.preventDefault()
-
-        var cocktail_name = 'margarita'
-        var alco = ''
+        var name_obj = document.getElementById("name");
+        var cocktail_name = name_obj.value;
+        var alco_obj = document.querySelector("input[type='radio'][name=alco-filter]:checked");
+        var alco_value = alco_obj.value;
 
         Axios.get(`${BASE_URL}/search.php?s=${cocktail_name}`).then(
             (response) => {
-                console.log(response.data)
-                setCocktailData(response.data.drinks[0])
+                var response_data = applyFilters(response.data.drinks, alco_value)
+                setCocktailData(response_data)
             }
         )
     }
@@ -59,14 +68,14 @@ const Cocktail = () => {
                     <form onSubmit={getCocktailData}>
                         <ul>
                             <li className='filter'>
-                                <input placeholder='Cocktail Name' type='text' name='name' autoComplete="off" required />
+                                <input placeholder='Cocktail Name' id='name' type='text' name='name' autoComplete="off" required />
                             </li>
                             <li>
-                                <input type="radio" id="alco" name="alco-filter" value="Alcoholic" />
+                                <input type="radio" id="alco" name="alco-filter" value="Alcoholic" defaultChecked />
                                 <label htmlFor="alco">Alcoholic</label>
-                                <input type="radio" id="non-alco" name="alco-filter" value="Non-Alcoholic" />
+                                <input type="radio" id="non-alco" name="alco-filter" value="Non alcoholic" />
                                 <label htmlFor="non-alco">Non-Alcoholic</label>
-                                <input type="radio" id="optional" name="alco-filter" value="Optional alcohol" defaultChecked />
+                                <input type="radio" id="optional" name="alco-filter" value="Optional alcohol" />
                                 <label htmlFor="optional">Optional</label>
                             </li>
                             <li>
