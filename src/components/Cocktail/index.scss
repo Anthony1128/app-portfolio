@@ -27,7 +27,7 @@ $text-color: white;
         padding: 0;
         margin: 0;
 
-        li {
+        .filters {
             text-align: center;
             padding: 0.5vh 0.5vh;
             margin: 0;
@@ -49,10 +49,22 @@ $text-color: white;
         padding: 0 1vh;
         box-sizing: border-box;
         background: rgba(101, 251, 163, 0.4);
-        text-align: center;
         border: 0.5vh solid rgb(0, 255, 153);
         box-shadow: 0 0 1vh 0vh rgb(151, 255, 213);
         color: $text-color;
+    }
+
+    #autocomplete-list {
+        width: 50%;
+        border: 1px dotted red;
+        color: red;
+        font-size: 1rem;
+        margin-left: 9vw;
+        padding: 0 1vh;
+    }
+
+    #alco-filter {
+        margin-top: 20vh;
     }
 
     input[type='radio'] {

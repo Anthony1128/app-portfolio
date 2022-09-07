@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Axios from 'axios'
 
 const BASE_URL = 'https://www.thecocktaildb.com/api/json/v1/1'
+var LAST_I = 0
 
 const applyFilters = (data, filters) => {
     data = data.filter((obj) => (obj['strAlcoholic'] == filters))
@@ -30,6 +31,37 @@ const CocktailInfo = ({ cocktailData }) => {
                 Instruction: {cocktailData.strInstructions}
             </p>
         </div>
+    )
+}
+
+function showResults(div_el, terms) {
+    div_el.innerHTML = '';
+    let list = '';
+
+    for (var i = 0; i < terms.length; i++) {
+        list += '<option value="' + terms[i] + '" />';
+    }
+
+    div_el.innerHTML = '<datalist id="suggestions">' + list + '</datalist>';
+}
+
+const checkList = (e) => {
+    Axios.get(`${BASE_URL}/search.php?s=${e.target.value}`).then(
+        (response) => {
+            const submit_button = document.getElementById("form-button")
+            const div_el = document.getElementById("autocomplete-list");
+
+            if (!response.data.drinks) {
+                submit_button.disabled = true;
+                div_el.innerHTML = "No such cocktail"
+            } else if (e.target.value == "") {
+                div_el.innerHTML = ""
+            } else {
+                var cocktails = response.data.drinks.map(x => x["strDrink"]).slice(0, 3)
+                showResults(div_el, cocktails)
+                submit_button.disabled = false
+            }
+        }
     )
 }
 
@@ -67,10 +99,11 @@ const Cocktail = () => {
                 <div className='cocktail-form'>
                     <form onSubmit={getCocktailData}>
                         <ul>
-                            <li className='filter'>
-                                <input placeholder='Cocktail Name' id='name' type='text' name='name' autoComplete="off" required />
+                            <li className='filters'>
+                                <input list="suggestions" onChange={checkList} placeholder='Cocktail Name' id='name' type='text' name='name' autoComplete='off' required />
+                                <div id="autocomplete-list"></div>
                             </li>
-                            <li>
+                            <li id="alco-filter" className='filters'>
                                 <input type="radio" id="alco" name="alco-filter" value="Alcoholic" defaultChecked />
                                 <label htmlFor="alco">Alcoholic</label>
                                 <input type="radio" id="non-alco" name="alco-filter" value="Non alcoholic" />
@@ -78,8 +111,8 @@ const Cocktail = () => {
                                 <input type="radio" id="optional" name="alco-filter" value="Optional alcohol" />
                                 <label htmlFor="optional">Optional</label>
                             </li>
-                            <li>
-                                <input type='submit' className='flat-button' value='apply' />
+                            <li className='filters'>
+                                <input id='form-button' type='submit' className='flat-button' value='apply' />
                             </li>
                         </ul>
                     </form>
