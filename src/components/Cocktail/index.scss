@@ -17,6 +17,10 @@ $text-color: white;
     color: $text-color;
 }
 
+.error-message {
+    color: red;
+}
+
 .cocktail-form {
     width: calc(50% - 10vw);
     margin-top: 1vh;
@@ -54,10 +58,19 @@ $text-color: white;
         color: $text-color;
     }
 
+    #random-button {
+        margin-left: 11.5vw;
+        opacity: 0;
+        animation: fadeInUp 2s 2s;
+        animation-fill-mode: forwards;
+        overflow: hidden;
+        display: block;
+        clear: both;
+    }
+
     #autocomplete-list {
         width: 50%;
         border: 1px dotted red;
-        color: red;
         font-size: 1rem;
         margin-left: 9vw;
         padding: 0 1vh;

@@ -1,37 +1,26 @@
 import './index.scss'
 import AnimatedLetters from '../AnimatedLetters'
+import CocktailInfo from './cocktailInfo'
+import AlcoFilters from './cocktailFilters'
 import { useEffect, useState } from 'react'
 import Axios from 'axios'
 
 const BASE_URL = 'https://www.thecocktaildb.com/api/json/v1/1'
-var LAST_I = 0
 
 const applyFilters = (data, filters) => {
-    data = data.filter((obj) => (obj['strAlcoholic'] == filters))
-    return data[0]
-}
+    let data_filtered = data
+    let empty_filter = ""
 
-const CocktailInfo = ({ cocktailData }) => {
-    var ingredients = Object.entries(cocktailData).filter(
-        (key, value) => (/strIngredient/.test(key))
-    ).filter(([_, v]) => v != null).map(x => x[1]).join(', ')
+    for (let i in filters) {
+        let filter = filters[i]
+        data_filtered = data_filtered.filter((obj) => (filter["filter_value"].includes(obj[filter["filter_key"]])))
+        if (data_filtered.length === 0) {
+            empty_filter = filter["filter_name"]
+        }
+    }
 
-    return (
-        <div>
-            <p>
-                Name: {cocktailData.strDrink}
-            </p>
-            <p>
-                Alco: {cocktailData.strAlcoholic}
-            </p>
-            <p>
-                Ingredients: {ingredients}
-            </p>
-            <p>
-                Instruction: {cocktailData.strInstructions}
-            </p>
-        </div>
-    )
+    data_filtered = data_filtered[0] || { "error_message": `Change filter - ${empty_filter}` }
+    return data_filtered
 }
 
 function showResults(div_el, terms) {
@@ -54,7 +43,7 @@ const checkList = (e) => {
             if (!response.data.drinks) {
                 submit_button.disabled = true;
                 div_el.innerHTML = "No such cocktail"
-            } else if (e.target.value == "") {
+            } else if (e.target.value === "") {
                 div_el.innerHTML = ""
             } else {
                 var cocktails = response.data.drinks.map(x => x["strDrink"]).slice(0, 3)
@@ -74,17 +63,38 @@ const Cocktail = () => {
         }, 4000)
     }, [])
 
+    const [alco_filters, setAlcoFilters] = useState([])
+    useEffect(() => {
+        setTimeout(() => {
+            Axios.get(`${BASE_URL}/list.php?a=list`).then(
+                (response) => {
+                    var values = response.data.drinks.map((x) => x["strAlcoholic"])
+                    setAlcoFilters(values)
+                }
+            )
+        }, 0)
+    }, [])
+
     const [cocktailData, setCocktailData] = useState('')
     const getCocktailData = (e) => {
         e.preventDefault()
+        var filters = []
         var name_obj = document.getElementById("name");
         var cocktail_name = name_obj.value;
-        var alco_obj = document.querySelector("input[type='radio'][name=alco-filter]:checked");
+        var alco_obj = document.querySelector("input[type='radio'][name=alco-filter]:checked") || { "value": "" };
         var alco_value = alco_obj.value;
+
+        filters.push(
+            {
+                "filter_name": "alcohol",
+                "filter_value": alco_value,
+                "filter_key": "strAlcoholic"
+            }
+        )
 
         Axios.get(`${BASE_URL}/search.php?s=${cocktail_name}`).then(
             (response) => {
-                var response_data = applyFilters(response.data.drinks, alco_value)
+                var response_data = applyFilters(response.data.drinks, filters)
                 setCocktailData(response_data)
             }
         )
@@ -100,22 +110,16 @@ const Cocktail = () => {
                     <form onSubmit={getCocktailData}>
                         <ul>
                             <li className='filters'>
-                                <input list="suggestions" onChange={checkList} placeholder='Cocktail Name' id='name' type='text' name='name' autoComplete='off' required />
-                                <div id="autocomplete-list"></div>
+                                <input list="suggestions" onChange={checkList} placeholder='Cocktail Name' id='name' type='text' name='name' autoComplete='off' />
+                                <div id="autocomplete-list" className='error-message'></div>
                             </li>
-                            <li id="alco-filter" className='filters'>
-                                <input type="radio" id="alco" name="alco-filter" value="Alcoholic" defaultChecked />
-                                <label htmlFor="alco">Alcoholic</label>
-                                <input type="radio" id="non-alco" name="alco-filter" value="Non alcoholic" />
-                                <label htmlFor="non-alco">Non-Alcoholic</label>
-                                <input type="radio" id="optional" name="alco-filter" value="Optional alcohol" />
-                                <label htmlFor="optional">Optional</label>
-                            </li>
+                            <AlcoFilters alco_filters={alco_filters} />
                             <li className='filters'>
                                 <input id='form-button' type='submit' className='flat-button' value='apply' />
                             </li>
                         </ul>
                     </form>
+                    <input onClick={() => { console.log("RANDOM") }} id='random-button' type='submit' className='flat-button' value='random' />
                 </div>
                 <div className='cocktail-data'>
                     <CocktailInfo cocktailData={cocktailData} />
