@@ -2,9 +2,11 @@ import './index.scss'
 import AnimatedLetters from '../AnimatedLetters'
 import CocktailInfo from './cocktailInfo'
 import AlcoFilters from './cocktailFilters'
+import CocktailPhoto from './cocktailPhoto'
 import { useEffect, useState } from 'react'
 import Axios from 'axios'
 
+// TODO add strVideo link
 const BASE_URL = 'https://www.thecocktaildb.com/api/json/v1/1'
 
 const applyFilters = (data, filters) => {
@@ -21,6 +23,15 @@ const applyFilters = (data, filters) => {
 
     data_filtered = data_filtered[0] || { "error_message": `Change filter - ${empty_filter}` }
     return data_filtered
+}
+
+const getPhoto = (cocktail_data) => {
+    let photo = ""
+
+    if (cocktail_data["error_message"]) return photo;
+
+    photo = cocktail_data["strDrinkThumb"]
+    return photo
 }
 
 function showResults(div_el, terms) {
@@ -75,6 +86,7 @@ const Cocktail = () => {
         }, 0)
     }, [])
 
+    const [cocktailPhoto, setCocktailPhoto] = useState('')
     const [cocktailData, setCocktailData] = useState('')
     const getCocktailData = (e) => {
         e.preventDefault()
@@ -95,7 +107,22 @@ const Cocktail = () => {
         Axios.get(`${BASE_URL}/search.php?s=${cocktail_name}`).then(
             (response) => {
                 var response_data = applyFilters(response.data.drinks, filters)
+                var response_photo = getPhoto(response_data)
                 setCocktailData(response_data)
+                setCocktailPhoto(response_photo)
+            }
+        )
+    }
+
+    const getRandomCocktail = (e) => {
+        e.preventDefault()
+
+        Axios.get(`${BASE_URL}/random.php`).then(
+            (response) => {
+                var response_data = response.data.drinks[0]
+                var response_photo = getPhoto(response_data)
+                setCocktailData(response_data)
+                setCocktailPhoto(response_photo)
             }
         )
     }
@@ -119,10 +146,11 @@ const Cocktail = () => {
                             </li>
                         </ul>
                     </form>
-                    <input onClick={() => { console.log("RANDOM") }} id='random-button' type='submit' className='flat-button' value='random' />
+                    <input onClick={getRandomCocktail} id='random-button' type='submit' className='flat-button' value='random' />
                 </div>
                 <div className='cocktail-data'>
                     <CocktailInfo cocktailData={cocktailData} />
+                    <CocktailPhoto cocktailPhoto={cocktailPhoto} />
                 </div>
             </div>
         </>

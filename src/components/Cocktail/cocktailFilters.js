@@ -26,8 +26,5 @@ const AlcoFilters = ({ alco_filters }) => {
         </li>
     )
 }
-// {/* <>
-// <span type="radio" key={char + i} id={char} name={char} value={char} defaultChecked />
-// <span key={`${char + i} _label`} htmlFor={char}>{char}</span>
-// </> */}
+
 export default AlcoFilters

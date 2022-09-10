@@ -134,5 +134,11 @@ $text-color: white;
     color: $text-color;
     font-size: 1rem;
     min-height: 300px;
-    padding: 2vh;
+    padding-left: 1vh;
+    padding-right: 1vh;
+
+    .cocktail-img {
+        max-width: 50%;
+        border-radius: 1vh;
+    }
 }
