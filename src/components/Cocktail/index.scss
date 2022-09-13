@@ -4,7 +4,7 @@ $text-color: white;
 
 
 #cocktail-header {
-    margin-left: 10vw;
+    margin-left: 15vh;
     margin-right: 1vw;
     margin-top: 2vh;
     background: rgba(101, 251, 163, 0.4);
@@ -22,9 +22,9 @@ $text-color: white;
 }
 
 .cocktail-form {
-    width: calc(50% - 10vw);
+    width: calc(50% - 15vh);
     margin-top: 1vh;
-    margin-left: 10vw;
+    margin-left: 15vh;
     float: left;
 
     ul {
@@ -59,7 +59,9 @@ $text-color: white;
     }
 
     #random-button {
-        margin-left: 11.5vw;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
         opacity: 0;
         animation: fadeInUp 2s 2s;
         animation-fill-mode: forwards;
@@ -136,9 +138,36 @@ $text-color: white;
     min-height: 300px;
     padding-left: 1vh;
     padding-right: 1vh;
+    overflow-y: scroll;
+    max-height: 80vh;
 
     .cocktail-img {
         max-width: 50%;
         border-radius: 1vh;
+    }
+}
+
+@media (max-width: 700px) {
+    #cocktail-header {
+        width: 60%;
+        font-size: 1rem;
+    }
+
+    .cocktail-form {
+        width: 60%;
+        float: unset;
+
+
+        #alco-filter {
+            margin-top: 0;
+            display: inline-flex;
+            align-items: center;
+        }
+    }
+
+    .cocktail-data {
+        width: 60%;
+        margin-left: 15vh;
+        max-height: 50vh;
     }
 }

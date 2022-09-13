@@ -36,6 +36,17 @@ $green-color: rgb(3, 140, 1);
     transform-style: preserve-3d;
     animation: fadeIn 1s forwards;
     animation-delay: 1s;
+    -ms-overflow-style: none;
+
+    /* Hiding scroll bar while still have ability to scroll */
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+
+    ::-webkit-scrollbar {
+        display: none;
+        /* Safari and Chrome */
+    }
 }
 
 .contact-page,
