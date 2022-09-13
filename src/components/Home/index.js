@@ -1,6 +1,7 @@
 import LogoTitle from "../../assets/images/A.png";
 import PyramidScrn from "../../assets/images/pyramid-prtscn.png";
 import PixelDrawScrn from "../../assets/images/pixeldraw-prtscn.png";
+import CocktailScrn from "../../assets/images/cocktail-prtscn.png";
 // import PyramidScrn from "../../assets/images/pyramid-simple.png";
 import AnimatedLetters from "../AnimatedLetters";
 import { Link } from 'react-router-dom';
@@ -45,7 +46,7 @@ const Home = () => {
                         <Link to="/pixeldraw"><img src={PixelDrawScrn} alt="pixeldraw" /></Link>
                     </div>
                     <div className="grid-item">
-                        <Link to="/cocktail"><img src={PixelDrawScrn} alt="cocktail" /></Link>
+                        <Link to="/cocktail"><img src={CocktailScrn} alt="cocktail" /></Link>
                     </div>
                     <div className="grid-item"></div>
                     <div className="grid-item"></div>
